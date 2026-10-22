@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px 16px;
+    background: #f6f4ff;
+    color: #24213a;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    margin: 30px auto;
+}
+
+header span,
+.review-card h2 span {
+    color: #8055e8;
+}
+
+.container,
+.review-card {
+    max-width: 460px;
+    margin: 24px auto;
+    padding: 28px 22px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 10px 40px rgba(42, 27, 85, 0.09);
+}
+
+.review-card {
+    text-align: center;
+}
+
+.review-card h1 {
+    margin-bottom: 8px;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 22px 0 8px;
+}
+
+.stars button {
+    padding: 3px;
+    border: 0;
+    background: transparent;
+    color: #d8d8df;
+    font-size: 38px;
+    cursor: pointer;
+}
+
+.stars button.active {
+    color: #f3b52b;
+}
+
+label {
+    display: block;
+    margin: 24px 0 8px;
+    text-align: left;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    min-height: 115px;
+    padding: 12px;
+    border: 1px solid #ddd7ef;
+    border-radius: 12px;
+    resize: vertical;
+    font: inherit;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8055e8, #5c3ac2);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.note {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#status {
+    color: #5c3ac2;
+    overflow-wrap: anywhere;
+}

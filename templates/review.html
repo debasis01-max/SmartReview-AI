@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ business.name }} | SmartReview AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <main class="review-card">
+
+        <h2>SmartReview<span>AI</span></h2>
+
+        <h1>{{ business.name }}</h1>
+
+        <p>How was your experience?</p>
+
+        <div class="stars" id="stars">
+            <button type="button" data-rating="1" aria-label="1 star">★</button>
+            <button type="button" data-rating="2" aria-label="2 stars">★</button>
+            <button type="button" data-rating="3" aria-label="3 stars">★</button>
+            <button type="button" data-rating="4" aria-label="4 stars">★</button>
+            <button type="button" data-rating="5" aria-label="5 stars">★</button>
+        </div>
+
+        <p id="ratingText">Select your rating</p>
+
+        <label for="feedback">
+           Optional: Add details about your experience
+        </label>
+
+      <textarea
+    id="feedback"
+    maxlength="1000"
+    placeholder="Optional: What did you like or dislike?"
+></textarea>
+
+        <button id="generate" class="button" type="button">
+            Generate Review with AI
+        </button>
+
+        <p id="status" role="status"></p>
+
+        <section id="result" hidden>
+    <h3>Your AI Review</h3>
+
+    <textarea id="reviewText" maxlength="2000"></textarea>
+<button id="copyAndOpen" class="button" type="button">
+    Copy & Open Google Reviews
+</button>
+
+<p class="note">
+    Your review will be copied. Paste it into Google and submit it yourself.
+</p>
+
+    <a id="googleLink"
+       class="button"
+       href="#"
+       target="_blank"
+       rel="noopener"
+       hidden>
+        Post Review on Google
+    </a>
+
+    <p class="note">
+        Review your draft, then submit it on Google.
+    </p>
+</section>
+
+    </main>
+
+    <script>
+        const BUSINESS_SLUG = {{ business.slug | tojson }};
+        const GOOGLE_REVIEW_URL = {{ business.google_review_url | tojson }};
+    </script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
